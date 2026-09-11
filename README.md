@@ -23,3 +23,5 @@ You only need **one** of the following:
 - NOVA Framework
 - Standalone mode
 - OneSync recommended
+
+![NOVA HUD Preview](nova_hud_preview.png)
