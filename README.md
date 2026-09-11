@@ -1,6 +1,6 @@
 # NOVA HUD
 
-Lightweight and modern FiveM HUD with support for **NOVA Framework**, **QBCore**, **ESX Legacy**, and standalone servers.
+Lightweight and modern FiveM HUD with support for **QBCore**, **ESX Legacy**, and standalone servers.
 
 ## Features
 
