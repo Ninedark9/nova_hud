@@ -1,0 +1,51 @@
+:root{
+  --text:#f8fbff;
+  --muted:#b4c0cc;
+  --accent:#76ecff;
+  --map-width:12vw;
+  --map-height:21.333333vh;
+  --map-top:20px;
+  --map-left:86.6vw;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent!important;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--text);pointer-events:none}
+.hud{position:fixed;inset:0;background:transparent!important}
+.hidden{display:none!important}
+
+.map-card{position:fixed;top:var(--map-top);left:var(--map-left);width:var(--map-width);display:flex;flex-direction:column;align-items:center;gap:7px;background:transparent!important}
+.map-shell{position:relative;width:var(--map-width);height:var(--map-height);border-radius:50%;background:transparent!important}
+.map-ring{position:absolute;border-radius:50%;pointer-events:none;background:transparent!important}
+.ring-1{inset:0;border:2px solid rgba(255,255,255,.34);box-shadow:0 5px 18px rgba(0,0,0,.20),inset 0 0 0 1px rgba(0,0,0,.18)}
+.ring-2{inset:7.1%;border:1px solid rgba(255,255,255,.11)}
+.compass{position:absolute;inset:0}
+.dir{position:absolute;font-size:12px;font-weight:900;letter-spacing:.11em;color:#fff;text-shadow:0 1px 5px #000,0 0 8px #000}
+.dir.north{left:50%;top:-2px;transform:translateX(-50%)}
+.dir.east{right:6px;top:50%;transform:translateY(-50%)}
+.dir.south{left:50%;bottom:1px;transform:translateX(-50%)}
+.dir.west{left:7px;top:50%;transform:translateY(-50%)}
+.heading-line{position:absolute;top:7%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;padding:0;margin:0;background:none!important;border:0!important;box-shadow:none!important;filter:none!important;text-shadow:0 2px 4px #000,0 0 8px #000}
+#heading-value{font-size:16px;font-weight:950;line-height:1;color:#fff;background:none!important}
+#heading-cardinal{font-size:11px;font-weight:950;letter-spacing:.11em;color:var(--accent);background:none!important}
+.map-text{width:100%;padding:0 5px;text-align:center;background:none!important;border:0!important;box-shadow:none!important;text-shadow:0 2px 5px rgba(0,0,0,.95),0 0 10px rgba(0,0,0,.65)}
+.zone{font-size:22px;font-weight:950;letter-spacing:-.02em;text-transform:uppercase;line-height:1.02}
+.street{margin-top:2px;font-size:14px;font-weight:850;color:#fff}
+.crossing{margin-top:1px;font-size:10px;font-weight:850;letter-spacing:.07em;text-transform:uppercase;color:#e0e7ee;min-height:12px}
+
+/* Fully transparent speedometer: no black card, no black tiles. */
+.vehicle-card{position:fixed;right:1.45vw;bottom:2.5vh;width:310px;padding:0;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;backdrop-filter:none!important}
+.speedo-wrap{position:relative;height:198px;display:grid;place-items:center;background:none!important}
+.speed-arc{position:absolute;width:194px;height:194px;border-radius:50%;background:conic-gradient(from 210deg,rgba(255,255,255,.13) 0deg 34deg,rgba(255,255,255,.018) 34deg 320deg,rgba(255,255,255,.13) 320deg 360deg);mask:radial-gradient(circle at center,transparent 0 61%,#000 63%);-webkit-mask:radial-gradient(circle at center,transparent 0 61%,#000 63%)}
+.speed-arc:after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 210deg,var(--accent) 0deg,#fff calc(var(--progress,.08) * 300deg),rgba(255,255,255,.028) 0deg);mask:radial-gradient(circle at center,transparent 0 72%,#000 74%);-webkit-mask:radial-gradient(circle at center,transparent 0 72%,#000 74%);filter:drop-shadow(0 0 7px rgba(118,236,255,.20))}
+.speed-inner{position:absolute;inset:20%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:none!important}
+.gear-row{display:flex;align-items:center;gap:8px;margin-bottom:3px;text-shadow:0 2px 5px rgba(0,0,0,.82)}
+.gear-label{font-size:10px;font-weight:850;letter-spacing:.22em;color:var(--muted)}
+#gear-value{font-size:25px;font-weight:950;color:var(--accent)}
+.speed-row{font-size:72px;font-weight:950;line-height:.9;letter-spacing:-.06em;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.68)}
+.unit-row{font-size:12px;font-weight:850;letter-spacing:.27em;color:#dde5ed;margin-top:5px;text-shadow:0 2px 5px rgba(0,0,0,.8)}
+.vehicle-meta{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:2px;background:none!important}
+.meta-stat{position:relative;padding-top:8px;text-align:center;background:none!important;border:0!important;box-shadow:none!important}
+.meta-stat:before{content:"";position:absolute;top:0;left:14%;right:14%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent)}
+.meta-stat small{display:block;font-size:8px;font-weight:850;letter-spacing:.13em;color:var(--muted);text-shadow:0 2px 4px #000}
+.meta-stat strong{display:block;margin-top:3px;font-size:13px;font-weight:950;color:#fff;text-shadow:0 2px 5px #000}
+#fuel-value.low,#engine-value.low{color:#ffd27d}
+#seatbelt-value.on{color:#7cf1be}

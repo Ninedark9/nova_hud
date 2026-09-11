@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA HUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hud" class="hud hidden">
+    <section class="map-card" id="map-card">
+      <div class="map-shell">
+        <div class="map-ring ring-1"></div>
+        <div class="map-ring ring-2"></div>
+        <div class="compass">
+          <span class="dir north">N</span>
+          <span class="dir east">E</span>
+          <span class="dir south">S</span>
+          <span class="dir west">W</span>
+          <div class="heading-line"><span id="heading-value">000</span><small id="heading-cardinal">N</small></div>
+        </div>
+      </div>
+      <div class="map-text">
+        <div class="zone" id="zone-name">LOS SANTOS</div>
+        <div class="street" id="street-name"></div>
+        <div class="crossing" id="crossing-name"></div>
+      </div>
+    </section>
+
+    <section class="vehicle-card hidden" id="vehicle-card">
+      <div class="speedo-wrap">
+        <div class="speed-arc" id="speed-arc"></div>
+        <div class="speed-inner">
+          <div class="gear-row"><span class="gear-label">GEAR</span><span id="gear-value">N</span></div>
+          <div class="speed-row"><span id="speed-value">000</span></div>
+          <div class="unit-row" id="speed-unit">MPH</div>
+        </div>
+      </div>
+      <div class="vehicle-meta">
+        <div class="meta-stat"><small>FUEL</small><strong id="fuel-value">100%</strong></div>
+        <div class="meta-stat"><small>ENGINE</small><strong id="engine-value">100%</strong></div>
+        <div class="meta-stat"><small>SEATBELT</small><strong id="seatbelt-value">OFF</strong></div>
+        <div class="meta-stat"><small>LIGHTS</small><strong id="lights-value">OFF</strong></div>
+        <div class="meta-stat"><small>BRAKE</small><strong id="handbrake-value">OFF</strong></div>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
