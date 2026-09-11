@@ -24,4 +24,4 @@ You only need **one** of the following:
 - Standalone mode
 - OneSync recommended
 
-![NOVA HUD Preview](nova_hud_preview.png)
+![NOVA HUD Preview](nova_hud.png)
